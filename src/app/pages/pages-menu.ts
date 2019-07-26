@@ -29,7 +29,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/layout/list',
       },
       {
-        title: 'Filter',
+        title: 'Group',
         link: '/pages/layout/infinite-list',
       },
     ],
@@ -47,20 +47,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/layout/list',
       },
       {
-        title: 'Filter',
+        title: 'Group',
         link: '/pages/layout/infinite-list',
       },
     ],
-  },
-  {
-    title: 'MailGroup',
-    icon: 'layers-outline',
-    link: '/pages/dashboard',
-  },
-  {
-    title: 'Sms Group',
-    icon: 'inbox-outline',
-    link: '/pages/dashboard',
   },
   {
     title: 'Schedule',
