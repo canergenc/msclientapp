@@ -2,35 +2,22 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'Home Page',
+    title: 'Dashboard',
     icon: 'home-outline',
     link: '/pages/dashboard',
     home: true,
   },
-  // {
-  //   title: 'IoT Dashboard',
-  //   icon: 'home-outline',
-  //   link: '/pages/iot-dashboard',
-  // },
-  // {
-  //   title: 'FEATURES',
-  //   group: true,
-  // },
   {
     title: 'Mail Module',
     icon: 'email-outline',
     children: [
       {
         title: 'Template',
-        link: '/pages/layout/stepper',
+        link: '/pages/mail/template',
       },
       {
         title: 'Query',
-        link: '/pages/layout/list',
-      },
-      {
-        title: 'Group',
-        link: '/pages/layout/infinite-list',
+        link: '/pages/mail/query',
       },
     ],
   },
@@ -40,22 +27,45 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Template',
-        link: '/pages/layout/stepper',
+        link: '/pages/sms/template',
       },
       {
         title: 'Query',
-        link: '/pages/layout/list',
-      },
-      {
-        title: 'Group',
-        link: '/pages/layout/infinite-list',
+        link: '/pages/sms/query',
       },
     ],
   },
   {
     title: 'Schedule',
     icon: 'calendar-outline',
-    link: '/pages/dashboard',
+    link: '/pages/schedule',
+  },
+  {
+    title: 'Instant',
+    icon: 'calendar-outline',
+    link: '/pages/instant',
+  },
+  {
+    title: 'Auth',
+    icon: 'lock-outline',
+    children: [
+      {
+        title: 'Login',
+        link: '/auth/login',
+      },
+      {
+        title: 'Register',
+        link: '/auth/register',
+      },
+      {
+        title: 'Request Password',
+        link: '/auth/request-password',
+      },
+      {
+        title: 'Reset Password',
+        link: '/auth/reset-password',
+      },
+    ],
   },
   // {
   //   title: 'Forms',
@@ -236,26 +246,4 @@ export const MENU_ITEMS: NbMenuItem[] = [
   //     },
   //   ],
   // },
-  {
-    title: 'Auth',
-    icon: 'lock-outline',
-    children: [
-      {
-        title: 'Login',
-        link: '/auth/login',
-      },
-      {
-        title: 'Register',
-        link: '/auth/register',
-      },
-      {
-        title: 'Request Password',
-        link: '/auth/request-password',
-      },
-      {
-        title: 'Reset Password',
-        link: '/auth/reset-password',
-      },
-    ],
-  },
 ];
