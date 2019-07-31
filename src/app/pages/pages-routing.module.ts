@@ -5,7 +5,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
-import { ScheduleComponent } from './schedule/schedule.component';
+import { JobsComponent } from './jobs/jobs.component';
 import { InstantComponent } from './instant/instant.component';
 
 const routes: Routes = [{
@@ -27,8 +27,8 @@ const routes: Routes = [{
         .then(m => m.SmsModule),
     },
     {
-      path: 'schedule',
-      component: ScheduleComponent,
+      path: 'jobs',
+      component: JobsComponent,
     },
     {
       path: 'instant',

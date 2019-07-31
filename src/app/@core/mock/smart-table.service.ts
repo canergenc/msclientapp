@@ -11,6 +11,13 @@ export class SmartTableService extends SmartTableData {
     username: '@mdo',
     email: 'mdo@gmail.com',
     age: '28',
+    type:'SMS',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 2,
     name: 'Jacob',
@@ -18,6 +25,13 @@ export class SmartTableService extends SmartTableData {
     username: '@fat',
     email: 'fat@yandex.ru',
     age: '45',
+    type:'Mail',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 3,
     name: 'Larry',
@@ -25,6 +39,13 @@ export class SmartTableService extends SmartTableData {
     username: '@twitter',
     email: 'twitter@outlook.com',
     age: '18',
+    type:'SMS',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 4,
     name: 'John',
@@ -32,6 +53,13 @@ export class SmartTableService extends SmartTableData {
     username: '@snow',
     email: 'snow@gmail.com',
     age: '20',
+    type:'Mail',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 5,
     name: 'Jack',
@@ -39,6 +67,13 @@ export class SmartTableService extends SmartTableData {
     username: '@jack',
     email: 'jack@yandex.ru',
     age: '30',
+    type:'Mail',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 6,
     name: 'Ann',
@@ -46,6 +81,13 @@ export class SmartTableService extends SmartTableData {
     username: '@ann',
     email: 'ann@gmail.com',
     age: '21',
+    type:'Mail',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 7,
     name: 'Barbara',
@@ -53,6 +95,13 @@ export class SmartTableService extends SmartTableData {
     username: '@barbara',
     email: 'barbara@yandex.ru',
     age: '43',
+    type:'Mail',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 8,
     name: 'Sevan',
@@ -60,6 +109,13 @@ export class SmartTableService extends SmartTableData {
     username: '@sevan',
     email: 'sevan@outlook.com',
     age: '13',
+    type:'Mail',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 9,
     name: 'Ruben',
@@ -67,6 +123,13 @@ export class SmartTableService extends SmartTableData {
     username: '@ruben',
     email: 'ruben@gmail.com',
     age: '22',
+    type:'Mail',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 10,
     name: 'Karen',
@@ -74,6 +137,13 @@ export class SmartTableService extends SmartTableData {
     username: '@karen',
     email: 'karen@yandex.ru',
     age: '33',
+    type:'Mail',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 11,
     name: 'Mark',
@@ -81,6 +151,13 @@ export class SmartTableService extends SmartTableData {
     username: '@mark',
     email: 'mark@gmail.com',
     age: '38',
+    type:'Mail',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 12,
     name: 'Jacob',
@@ -88,6 +165,13 @@ export class SmartTableService extends SmartTableData {
     username: '@jacob',
     email: 'jacob@yandex.ru',
     age: '48',
+    type:'Mail',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 13,
     name: 'Haik',
@@ -95,6 +179,13 @@ export class SmartTableService extends SmartTableData {
     username: '@haik',
     email: 'haik@outlook.com',
     age: '48',
+    type:'Mail',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 14,
     name: 'Garegin',
@@ -102,6 +193,13 @@ export class SmartTableService extends SmartTableData {
     username: '@garegin',
     email: 'garegin@gmail.com',
     age: '40',
+    type:'Mail',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     id: 15,
     name: 'Krikor',
@@ -109,6 +207,13 @@ export class SmartTableService extends SmartTableData {
     username: '@krikor',
     email: 'krikor@yandex.ru',
     age: '32',
+    type:'Mail',
+    template:'Template Name',
+    query:'Query Name',
+    startDate:'2019-10-15 11:00:00',
+    endDate:'2019-10-26 11:00:00',
+    every:1,
+    when:'Year'
   }, {
     'id': 16,
     'name': 'Francisca',

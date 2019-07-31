@@ -7,7 +7,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
-import { ScheduleModule } from './schedule/schedule.module';
+import { JobsModule } from './jobs/jobs.module';
 import { InstantModule } from './instant/instant.module';
 
 @NgModule({
@@ -18,7 +18,7 @@ import { InstantModule } from './instant/instant.module';
     DashboardModule,
     ECommerceModule,
     MiscellaneousModule,
-    ScheduleModule,
+    JobsModule,
     InstantModule
   ],
   declarations: [

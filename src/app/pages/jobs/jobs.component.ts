@@ -1,17 +1,14 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-
 import { LocalDataSource } from 'ng2-smart-table';
-import { SmartTableData } from '../../../@core/data/smart-table';
+import { SmartTableData } from '../../@core/data/smart-table';
 import { NbDialogService } from '@nebular/theme';
-import '../../ckeditor.loader';
-import 'ckeditor';
 
 @Component({
-  selector: 'ngx-template',
-  templateUrl: './template.component.html',
-  styleUrls: ['./template.component.scss']
+  selector: 'ngx-jobs',
+  templateUrl: './jobs.component.html',
+  styleUrls: ['./jobs.component.scss']
 })
-export class TemplateComponent implements OnInit {
+export class JobsComponent implements OnInit {
 
   settings = {
     actions: {
@@ -49,14 +46,34 @@ export class TemplateComponent implements OnInit {
         title: 'Description',
         type: 'string',
       },
-      username: {
-        title: 'CreatedBy',
+      type: {
+        title: 'Type',
         type: 'string',
       },
-      email: {
-        title: 'CreatedDate',
-        type: 'date',
+      template: {
+        title: 'Template',
+        type: 'string',
       },
+      query: {
+        title: 'Query',
+        type: 'string',
+      },
+      startDate: {
+        title: 'StartDate',
+        type: 'string',
+      },
+      endDate: {
+        title: 'EndDate',
+        type: 'string',
+      },
+      every: {
+        title: 'Every',
+        type: 'string',
+      },
+      when: {
+        title: 'When',
+        type: 'string',
+      }
     },
   };
 
@@ -89,4 +106,5 @@ export class TemplateComponent implements OnInit {
       event.confirm.reject();
     }
   }
+
 }

@@ -36,9 +36,9 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Schedule',
+    title: 'Jobs',
     icon: 'calendar-outline',
-    link: '/pages/schedule',
+    link: '/pages/jobs',
   },
   {
     title: 'Instant',
