@@ -10,6 +10,21 @@ import { NbDialogService } from '@nebular/theme';
 })
 export class JobsComponent implements OnInit {
 
+  public query3 = '';
+  public staticList = [
+    "guitar",
+    "drums",
+    "bass",
+    "electric guitars",
+    "keyboards",
+    "mic",
+    "bass guitars",
+    "trumpet",
+    "horns",
+    "guitar workshops",
+    "pedals"
+  ];
+
   settings = {
     actions: {
       position: 'right',
@@ -80,21 +95,26 @@ export class JobsComponent implements OnInit {
   source: LocalDataSource = new LocalDataSource();
   model: any = {};
   cardName: any;
+  date = new Date();
   constructor(private service: SmartTableData, private dialogService: NbDialogService) {
     const data = this.service.getData();
     this.source.load(data);
   }
   ngOnInit() { }
 
+  public handleStaticResultSelected (result) {
+    this.query3 = result;
+  }
+
   onCreateNewProcessor(dialog: TemplateRef<any>) {
     console.log(dialog);
-    this.cardName = "Create New Mail Template";
+    this.cardName = "Create New Job";
     this.model = {};
     this.dialogService.open(dialog);
   }
   onEditProcessor(event, dialog: TemplateRef<any>) {
     console.log(event);
-    this.cardName = "Edit New Mail Template";
+    this.cardName = "Edit New Job";
     this.model.name = event.data.name;
     this.model.description = event.data.description;
     this.dialogService.open(dialog);

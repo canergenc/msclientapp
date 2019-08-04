@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { NbCardModule, NbTreeGridModule, NbIconModule, NbInputModule, NbActionsModule, NbButtonModule } from '@nebular/theme';
+import { NbCardModule, NbTreeGridModule, NbIconModule, NbInputModule, NbActionsModule, NbButtonModule, NbRadioModule, NbCalendarModule } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { JobsComponent } from './jobs.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { CKEditorModule } from 'ng2-ckeditor';
 import { FormsModule } from '@angular/forms';
+import { NgxTypeaheadModule } from 'ngx-typeahead';
 
 @NgModule({
   imports: [
@@ -17,8 +17,10 @@ import { FormsModule } from '@angular/forms';
     NbActionsModule,
     Ng2SmartTableModule,
     NbButtonModule,
-    CKEditorModule,
-    FormsModule
+    FormsModule,
+    NbRadioModule,
+    NgxTypeaheadModule,
+    NbCalendarModule,
   ],
   declarations: [
     JobsComponent,
