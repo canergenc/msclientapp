@@ -11,10 +11,10 @@
   </nb-card-body>
 </nb-card>
 
-<ng-template #dialog let-ref="dialogRef">
-  <nb-card>
+<ng-template #dialog let-ref="dialogRef" >
+  <nb-card >
     <nb-card-header>{{cardName}}</nb-card-header>
-    <nb-card-body>
+    <nb-card-body style="overflow:scroll">
       <div class="col-md-12" style="width: 999px">
         <form #templateForm="ngForm">
           <div class="form-group row">
@@ -53,47 +53,44 @@
             <!-- </div> -->
           </div>
           <div class="form-group row">
-            <div class="col-md-6 row">
-              <label for="TemplateName" class="label col-sm-3 col-form-label">Every</label>
-              <section class="col-sm-9">
-                <div class="search-results style-3">
-                  <input type="text" placeholder="Every" ngxTypeahead class="col-sm-12 form-control" [value]="query3"
-                    [taList]="staticList" (taSelected)="handleStaticResultSelected($event)">
-                </div>
-              </section>
-            </div>
-            <div class="col-md-6 row">
-              <label for="TemplateName" class="label col-sm-3 col-form-label">When</label>
-              <section class="col-sm-9">
-                <div class="search-results style-3">
-                  <input type="text" placeholder="When" ngxTypeahead class="col-sm-12 form-control" [value]="query3"
-                    [taList]="staticList" (taSelected)="handleStaticResultSelected($event)">
-                </div>
-              </section>
-            </div>
+            <label for="TemplateName" class="label col-sm-3 col-form-label">Every</label>
+            <section class="col-sm-9">
+              <div class="search-results style-3">
+                <input type="text" placeholder="Every" ngxTypeahead class="col-sm-12 form-control" [value]="query3"
+                  [taList]="staticList" (taSelected)="handleStaticResultSelected($event)">
+              </div>
+            </section>
           </div>
-
-          <div class="form-group row"> 
-          <div class="col-md-6">
-              <div class="calendars">
-                  <div class="calendar-container">
-                    <span class="subtitle">
-                      Start date: {{ date | date }}
-                    </span>
-                    <nb-calendar [(date)]="date" [boundingMonth]="true"></nb-calendar>
-                  </div>
-                </div>
+          <div class="form-group row">
+            <label for="TemplateName" class="label col-sm-3 col-form-label">When</label>
+            <section class="col-sm-9">
+              <div class="search-results style-3">
+                <input type="text" placeholder="When" ngxTypeahead class="col-sm-12 form-control" [value]="query3"
+                  [taList]="staticList" (taSelected)="handleStaticResultSelected($event)">
+              </div>
+            </section>
           </div>
-          <div class="col-md-6">
-              <div class="calendars">
-                  <div class="calendar-container">
-                    <span class="subtitle">
-                      Finish Date: {{ date | date }}
-                    </span>
-                    <nb-calendar [(date)]="date" [boundingMonth]="true"></nb-calendar>
-                  </div>
+          <div class="form-group row">
+        
+              <div class="calendars col-md-6">
+                <div class="calendar-container">
+                  <span class="subtitle">
+                    Start Date: {{ date | date }}
+                  </span>
+                  <nb-calendar [(date)]="date" [boundingMonth]="true"></nb-calendar>
                 </div>
-          </div>
+              </div>
+            
+            
+              <div class="calendars col-md-6">
+                <div class="calendar-container">
+                  <span class="subtitle">
+                    Finish Date: {{ date | date }}
+                  </span>
+                  <nb-calendar [(date)]="date" [boundingMonth]="true"></nb-calendar>
+                </div>
+              </div>
+           
           </div>
         </form>
       </div>
