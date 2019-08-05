@@ -1,73 +1,79 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef } from "@angular/core";
 
-import { LocalDataSource } from 'ng2-smart-table';
-import { SmartTableData } from '../../../@core/data/smart-table';
-import { NbDialogService } from '@nebular/theme';
-import '../../ckeditor.loader';
-import 'ckeditor';
+import { LocalDataSource } from "ng2-smart-table";
+import { SmartTableData } from "../../../@core/data/smart-table";
+import { NbDialogService } from "@nebular/theme";
+import "../../ckeditor.loader";
+import "ckeditor";
+import { TemplateService } from "../../../@core/services/template.service";
 
 @Component({
-  selector: 'ngx-template',
-  templateUrl: './template.component.html',
-  styleUrls: ['./template.component.scss']
+  selector: "ngx-template",
+  templateUrl: "./template.component.html",
+  styleUrls: ["./template.component.scss"]
 })
 export class TemplateComponent implements OnInit {
-
   settings = {
     actions: {
-      position: 'right',
+      position: "right",
       add: true,
       edit: true,
       editable: false,
-      columnTitle: '',
+      columnTitle: ""
     },
-    mode: 'external',
+    mode: "external",
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>'
     },
     edit: {
       editButtonContent: '<i class="nb-edit"></i>',
       saveButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
+      cancelButtonContent: '<i class="nb-close"></i>'
     },
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
-      confirmDelete: true,
+      confirmDelete: true
     },
     columns: {
       id: {
-        title: 'ID',
-        type: 'number',
+        title: "ID",
+        type: "number"
       },
       name: {
-        title: 'Name',
-        type: 'string',
+        title: "Name",
+        type: "string"
       },
       description: {
-        title: 'Description',
-        type: 'string',
+        title: "Description",
+        type: "string"
       },
       username: {
-        title: 'CreatedBy',
-        type: 'string',
+        title: "CreatedBy",
+        type: "string"
       },
       email: {
-        title: 'CreatedDate',
-        type: 'date',
-      },
-    },
+        title: "CreatedDate",
+        type: "date"
+      }
+    }
   };
 
   source: LocalDataSource = new LocalDataSource();
   model: any = {};
   cardName: any;
-  constructor(private service: SmartTableData, private dialogService: NbDialogService) {
+  constructor(
+    private service: SmartTableData,
+    private dialogService: NbDialogService,
+    private templateService: TemplateService
+  ) {
     const data = this.service.getData();
     this.source.load(data);
   }
-  ngOnInit() { }
+  ngOnInit() {
+    this.fetchAllData();
+  }
 
   onCreateNewProcessor(dialog: TemplateRef<any>) {
     console.log(dialog);
@@ -83,10 +89,16 @@ export class TemplateComponent implements OnInit {
     this.dialogService.open(dialog);
   }
   onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
+    if (window.confirm("Are you sure you want to delete?")) {
       event.confirm.resolve();
     } else {
       event.confirm.reject();
     }
+  }
+  fetchAllData() {
+    this.templateService.get().subscribe(templates => {
+      console.log(templates);
+    });
+    console.log('temp');
   }
 }
