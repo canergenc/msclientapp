@@ -76,6 +76,7 @@ export class TemplateComponent implements OnInit {
     this.source.load(data);
   }
   ngOnInit() {
+    this.createTemplate();
     this.fetchAllData();
     console.log(this.templateList);
 
@@ -102,8 +103,20 @@ export class TemplateComponent implements OnInit {
     }
   }
   fetchAllData() {
-    this.templateService.get().subscribe(templates => {
+    this.templateService.getAllTemplatesWithTypes().subscribe(templates => {
       this.templateList = templates.templatesListModel;
+      console.log(this.templateList);
+    });
+  }
+
+  createTemplate() {
+    const params = new Templates();
+    params.Name = "Can MERCAN";
+    params.Description = "Bir markadır.";
+    params.IsDeleted = false;
+    params.TypeId = 1;
+    this.templateService.createTemplate(params).subscribe(templates => {
+      console.log('success');
     });
   }
 }
