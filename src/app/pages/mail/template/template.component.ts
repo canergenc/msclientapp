@@ -6,6 +6,8 @@ import { NbDialogService } from "@nebular/theme";
 import "../../ckeditor.loader";
 import "ckeditor";
 import { TemplateService } from "../../../@core/services/template.service";
+import { TemplateResponse } from "../../../@core/interfaces/template-response";
+import { Templates } from "../../../@core/models/templates";
 
 @Component({
   selector: "ngx-template",
@@ -13,6 +15,8 @@ import { TemplateService } from "../../../@core/services/template.service";
   styleUrls: ["./template.component.scss"]
 })
 export class TemplateComponent implements OnInit {
+  templateList: Templates[];
+
   settings = {
     actions: {
       position: "right",
@@ -73,6 +77,8 @@ export class TemplateComponent implements OnInit {
   }
   ngOnInit() {
     this.fetchAllData();
+    console.log(this.templateList);
+
   }
 
   onCreateNewProcessor(dialog: TemplateRef<any>) {
@@ -97,8 +103,7 @@ export class TemplateComponent implements OnInit {
   }
   fetchAllData() {
     this.templateService.get().subscribe(templates => {
-      console.log(templates);
+      this.templateList = templates.templatesListModel;
     });
-    console.log('temp');
   }
 }

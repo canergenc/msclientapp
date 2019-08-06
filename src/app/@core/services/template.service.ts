@@ -10,7 +10,7 @@ const httpOptions = {
     'Content-Type':  'application/json'
   }),
 };
-const URL = 'http://10.254.46.189:8083/api/Template/GetAllTemplates';
+const URL = 'http://10.254.46.189:8083/api/Template/GetAllTemplatesWithTypes';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +21,7 @@ export class TemplateService implements ServiceBase {
   get() {
     return this.http.get<TemplateResponse>(URL).pipe(
       map((response: TemplateResponse) => {
-        return response.templates;
+        return response;
       }),
       catchError(this.handleError),
     );
