@@ -8,6 +8,7 @@ import "ckeditor";
 import { TemplateService } from "../../../@core/services/template.service";
 import { TemplateResponse } from "../../../@core/interfaces/template-response";
 import { Templates } from "../../../@core/models/templates";
+import { map } from "rxjs/operators";
 
 @Component({
   selector: "ngx-template",
@@ -72,21 +73,19 @@ export class TemplateComponent implements OnInit {
     private dialogService: NbDialogService,
     private templateService: TemplateService
   ) {
-    const data = this.service.getData();
-    this.source.load(data);
+    // const data = this.service.getData();
+    // this.source.load(data);
   }
   ngOnInit() {
-    this.createTemplate();
     this.fetchAllData();
-    console.log(this.templateList);
-
   }
 
   onCreateNewProcessor(dialog: TemplateRef<any>) {
-    console.log(dialog);
-    this.cardName = "Create New Mail Template";
-    this.model = {};
-    this.dialogService.open(dialog);
+    // console.log(dialog);
+    // this.cardName = "Create New Mail Template";
+    // this.model = {};
+    // this.dialogService.open(dialog);
+    this.createTemplate();
   }
   onEditProcessor(event, dialog: TemplateRef<any>) {
     console.log(event);
@@ -104,19 +103,23 @@ export class TemplateComponent implements OnInit {
   }
   fetchAllData() {
     this.templateService.getAllTemplatesWithTypes().subscribe(templates => {
-      this.templateList = templates.templatesListModel;
-      console.log(this.templateList);
+      this.source.load(templates.templatesListModel);
     });
   }
 
   createTemplate() {
+    console.log("creating");
+
     const params = new Templates();
     params.Name = "Can MERCAN";
     params.Description = "Bir markadır.";
     params.IsDeleted = false;
     params.TypeId = 1;
-    this.templateService.createTemplate(params).subscribe(templates => {
-      console.log('success');
-    });
+    this.templateService.createTemplate(params).subscribe(
+      (response: TemplateResponse) => {
+        if (response) console.log(response);
+      },
+      (error: any) => console.log(error)
+    );
   }
 }
