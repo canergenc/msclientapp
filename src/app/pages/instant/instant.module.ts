@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
-import {
-} from '@nebular/theme';
+import { NbStepperModule, NbCardModule, NbButtonModule } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { InstantComponent } from './instant.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     ThemeModule,
-    
+    NbStepperModule,
+    FormsModule,
+    NbCardModule,
+    NbButtonModule,
   ],
   declarations: [
     InstantComponent,
