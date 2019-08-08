@@ -1,32 +1,101 @@
 <nb-card class="col-md-12 col-lg-12 col-xxxl-12">
-    <nb-card-body>
-      <nb-stepper orientation="horizontal">
-        <nb-step [label]="labelOne">
-          <ng-template #labelOne>First step</ng-template>
-          <div class="buttons-row">            
-              <button class="col-md-6" nbButton status='primary' outline >MAİL</button>    
-              <button class="col-md-6" nbButton status='primary' outline >SMS</button>
+  <nb-card-header>Create Instant</nb-card-header>
+  <nb-card-body>
+    <nb-stepper orientation="horizontal">
+      <nb-step [label]="labelOne">
+        <ng-template #labelOne>First Step</ng-template>
+        <div class="buttons-row">
+          <button nbButton status='primary' outline style="width: 270px; height: 200px;">MAİL</button>
+          <button nbButton status='primary' outline style="width: 270px; height: 200px;">SMS</button>
+        </div>
+        <button nbButton disabled nbStepperNext>prev</button>
+        <button nbButton nbStepperNext>next</button>
+      </nb-step>
+      <nb-step [label]="labelTwo">
+        <ng-template #labelTwo>Second Step</ng-template>
+        <form #templateForm="ngForm">
+          <div class="form-group row">
+            <label for="TemplateName" class="label col-sm-3 col-form-label">Template</label>
+            <section class="col-sm-9">
+              <div class="search-results style-3">
+                <input type="text" placeholder="Template" ngxTypeahead class="col-sm-12 form-control" [value]="query3"
+                  [taList]="staticList" (taSelected)="handleStaticResultSelected($event)">
+              </div>
+            </section>
+          </div>
+          <div class="form-group row">
+            <label class="label col-sm-3 col-form-label"></label>
+            <section class="col-sm-9">
+              <div class="validation-checkboxes">
+                <nb-checkbox status="success">Create Instant Template</nb-checkbox>
+              </div>
+            </section>
+          </div>
+          <div class="form-group row">
+            <label for="templateEditor" class="col-sm-3 label">Template</label>
+            <div class="col-sm-9">
+              <ckeditor id="templateEditor" [config]="{ extraPlugins: 'divarea', height: '320' }"></ckeditor>
             </div>
-          <button nbButton disabled nbStepperNext>prev</button>
-          <button nbButton nbStepperNext>next</button>
-        </nb-step>
-        <nb-step [label]="labelTwo">
-          <ng-template #labelTwo>Second step</ng-template>
-          <h3>Step content #2</h3>
-          <button nbButton nbStepperPrevious>prev</button>
-          <button nbButton nbStepperNext>next</button>
-        </nb-step>
-        <nb-step label="Third step">
-          <h3>Step content #3</h3>
-          <button nbButton nbStepperPrevious>prev</button>
-          <button nbButton nbStepperNext>next</button>
-        </nb-step>
-        <nb-step [label]="labelFour">
-          <ng-template #labelFour>Fourth step</ng-template>
-          <h3>Step content #4</h3>
-          <button nbButton nbStepperPrevious>prev</button>
-          <button nbButton disabled nbStepperNext>next</button>
-        </nb-step>
-      </nb-stepper>
-    </nb-card-body>
-  </nb-card>
+          </div>
+        </form>
+        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton nbStepperNext>next</button>
+      </nb-step>
+      <nb-step label="Third step">
+        <form #queryForm="ngForm">
+          <div class="form-group row">
+            <label for="Query" class="label col-sm-3 col-form-label">Query</label>
+            <section class="col-sm-9">
+              <div class="search-results style-3">
+                <input type="text" placeholder="Query" ngxTypeahead class="col-sm-12 form-control" [value]="query3"
+                  [taList]="staticList" (taSelected)="handleStaticResultSelected($event)">
+              </div>
+            </section>
+          </div>
+          <div class="form-group row">
+            <label class="label col-sm-3 col-form-label"></label>
+            <section class="col-sm-9">
+              <div class="validation-checkboxes">
+                <nb-checkbox status="success">Create Instant Query</nb-checkbox>
+              </div>
+            </section>
+          </div>
+          <div class="form-group row">
+            <label for="queryEditor" class="col-sm-3 label">Query</label>
+            <div class="col-sm-9">
+              <textarea rows="5" nbInput fullWidth shape="round" placeholder="Query" name="queryEditor"></textarea>
+            </div>
+          </div>
+        </form>
+        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton nbStepperNext>next</button>
+      </nb-step>
+      <nb-step [label]="labelFour">
+        <ng-template #labelFour>Fourth step</ng-template>
+        <form #previewForm="ngForm">
+          <div class="form-group row">
+            <label for="templateEditor" class="col-sm-3 label">Template</label>
+            <div class="col-sm-9">
+              <ckeditor id="templateEditor" [config]="{ extraPlugins: 'divarea', height: '320' ,readOnly:true}">
+              </ckeditor>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="queryEditor" class="col-sm-3 label">Query</label>
+            <div class="col-sm-9">
+              <ckeditor id="queryEditor" [config]="{ extraPlugins: 'divarea', height: '320' ,readOnly:true}"></ckeditor>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="queryEditor" class="col-sm-3 label">Result</label>
+            <div class="col-sm-9">
+              <h4> Will sent for 103 users </h4>
+            </div>
+          </div>
+        </form>
+        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton disabled nbStepperNext>next</button>
+      </nb-step>
+    </nb-stepper>
+  </nb-card-body>
+</nb-card>
