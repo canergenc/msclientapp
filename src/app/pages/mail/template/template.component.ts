@@ -111,7 +111,7 @@ export class TemplateComponent implements OnInit {
     console.log("creating");
 
     const params = new Templates();
-    params.Name = "Can MERCAN";
+    params.Name = "Caner MERCAN";
     params.Description = "Bir markadır.";
     params.IsDeleted = false;
     params.TypeId = 1;

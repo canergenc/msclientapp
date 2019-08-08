@@ -42,13 +42,10 @@ export class TemplateService implements ServiceBase {
         catchError(this.handleError)
       );
   }
-  // post(personel: Personel, header: HttpHeaders) {
-  //   return this.httpClient.post("http://localhost:51361/api/personel/post", personel, { headers: header });
-  // }
 
   getAllTemplatesWithTypes() {
     return this.http
-      .get<TemplateResponse>(baseURL + "GetAllTemplatesWithTypes")
+      .get<TemplateResponse>(baseURL + "GetAllTemplatesWithTypes", httpOptions)
       .pipe(
         map((response: TemplateResponse) => {
           return response;
@@ -94,15 +91,7 @@ export class TemplateService implements ServiceBase {
 
   createTemplate(params: Templates): Observable<TemplateResponse> {
     return this.http
-      .post<TemplateResponse>(
-        baseURL + "CreateTemplate",
-        params,
-        {
-          headers: new HttpHeaders({
-            "Content-Type": "application/json"
-          })
-        }
-      )
+      .post<TemplateResponse>(baseURL + "CreateTemplate", params, httpOptions)
       .pipe(catchError(this.handleError));
   }
 
@@ -119,7 +108,7 @@ export class TemplateService implements ServiceBase {
   }
 
   handleError(error: HttpErrorResponse) {
-    console.error('---ERROR---' + error.message);
+    console.error("---ERROR---" + error.message);
     return throwError("A data error occurred, please try again.");
   }
 }

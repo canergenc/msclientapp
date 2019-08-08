@@ -1,6 +1,6 @@
 import { Types } from "./types";
 
-export class Templates {  
+export class Templates {
   Name: string;
   Description: string;
   Template: string;
@@ -11,4 +11,5 @@ export class Templates {
   CreatedDate: Date;
   UpdatedBy: number;
   UpdatedDate: Date;
+  TypesModel: Types;
 }
